@@ -2,7 +2,10 @@
 *.swp
 *~
 \#*#
-
+neko-void.key
+neko-void.pub
+signed-pkgs
+hostdir
 # exclude everything in root except files and directories from void-packages
 /*
 !/.editorconfig
