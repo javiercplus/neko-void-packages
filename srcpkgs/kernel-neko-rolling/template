@@ -1,0 +1,19 @@
+pkgname=kernel-neko-rolling
+version=7.0
+revision=1
+short_desc="Custom RT kernel Rolling precompiled for Void Linux"
+maintainer="JavierC"
+license="GPL-2.0-only"
+homepage="https://github.com/javiercplus/kernel-neko-void/"
+distfiles="https://github.com/javiercplus/kernel-neko-void/releases/download/7.0/neko-kernel-void-7.0.0-rolling-neko+.tar.gz"
+checksum="3a712f66d676f4a5a9dca3ff7ae08e97ee35030cf547cfcae1b5090ee8732de5"
+create_wrksrc=yes
+triggers="kernel-hooks"
+kernel_hooks_version="7.0.0-rolling-neko+"
+do_install() {
+    vmkdir boot
+    vmkdir usr/lib/modules
+
+    cp -a boot/* ${DESTDIR}/boot/
+    cp -a lib/modules/* ${DESTDIR}/usr/lib/modules/
+}
